@@ -2,135 +2,419 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nadir A. Elzouki | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  
+  <!-- SEO Meta Tags -->
+  <title>Nadir A. Elzouki | Full Stack Developer & Cybersecurity Specialist</title>
+  <meta name="description" content="Full Stack Developer متخصص في Web 3.0, الذكاء الاصطناعي, وأمن المعلومات. خبرة في Python, JavaScript, Swift, Cybersecurity مع أكثر من 30 مشروع">
+  <meta name="keywords" content="مطور ويب, Full Stack, Web 3.0, Python, JavaScript, Cybersecurity, AI, Machine Learning, Flask, Django, Swift, iOS, Android">
+  <meta name="author" content="Nadir A. Elzouki">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nadir A. Elzouki | Full Stack Developer">
+  <meta property="og:description" content="مطور Full Stack متخصص في Web 3.0, الذكاء الاصطناعي وأمن المعلومات">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/1a1a2e/6c5ce7?text=Nadir+Elzouki">
+
+  <!-- Bootstrap 4.5 CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <style>
+    /* ========== WEB 3.0 THEME ========== */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-.skills-section {
-    text-align: center;
-    padding: 2rem 0;
-}
-
-.skill-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.skill {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-}
-
-.skill-logo {
-    width: 50px; /* Adjust size as needed */
-    height: auto;
-    margin-right: 8px;
-}
-
-.card-img-top {
-    height: 180px;
-    object-fit: cover; /* Ensures the image covers the card area without distortion */
-}
-
-.card-body {
-    text-align: left;
-}
-
-/* Style the navbar links */
-.navbar-nav .nav-link {
-    color: blue; /* Change this to your desired shade of blue */
-}
-
-/* Ensure the color change applies to active links */
-.navbar-nav .nav-item.active .nav-link {
-    color: darkblue; /* Change this to a darker shade of blue for active links */
-}
-
-/* Adjust the navbar to fit well on different screen sizes */
-.navbar {
-    padding: 0.5rem 1rem; /* Adjust padding as needed */
-}
-
-.navbar-toggler {
-    border: none; /* Remove border from the toggler */
-}
-
-/* Ensure that the navbar collapses properly on smaller screens */
-@media (max-width: 992px) {
-    .navbar-nav {
-        text-align: center; /* Center align menu items on smaller screens */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 10% 20%, rgba(21, 18, 36, 1) 0%, rgba(6, 6, 15, 1) 90%);
+      color: #e0e0e0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ========== CUSTOM SCROLLBAR ========== */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a1a2e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #6c5ce7;
+      border-radius: 10px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #a463f5, #6c5ce7, #00d2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 2rem !important;
+      position: relative;
+      display: inline-block;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background: linear-gradient(90deg, #6c5ce7, transparent);
+      border-radius: 2px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 50px 0;
+      }
+    }
+
+    /* ========== GLASSMORPHISM CARDS ========== */
+    .card {
+      background: rgba(20, 20, 40, 0.6) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(108, 92, 231, 0.3) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 45px rgba(108, 92, 231, 0.3), 0 0 0 2px #6c5ce7 inset;
+    }
+
+    .card-body {
+      background: rgba(15, 15, 25, 0.4);
+      border-radius: 20px;
+      padding: 1.5rem;
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      background: rgba(10, 10, 20, 0.8) !important;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid #6c5ce7;
+      padding: 0.8rem 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #a463f5, #6c5ce7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @media (max-width: 576px) {
+      .navbar-brand {
+        font-size: 1.4rem;
+      }
+    }
+
     .navbar-nav .nav-link {
-        padding: 0.5rem 1rem; /* Add padding for better touch targets */
+      color: #ccc !important;
+      font-weight: 500;
+      margin: 0 5px;
+      transition: all 0.3s;
+      border-radius: 30px;
+      padding: 8px 16px !important;
     }
-}
 
-.project-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
+    .navbar-nav .nav-link:hover {
+      background: rgba(108, 92, 231, 0.2);
+      color: #fff !important;
+      box-shadow: 0 0 15px #6c5ce7;
+    }
 
-.project {
-    text-align: center;
-}
+    /* ========== HERO SECTION ========== */
+    .hero {
+      padding: 120px 0 80px;
+      text-align: center;
+    }
 
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
+    @media (max-width: 768px) {
+      .hero {
+        padding: 100px 0 60px;
+      }
+    }
 
-.button:hover {
-    background-color: #0056b3;
-}
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      background: linear-gradient(120deg, #fff, #a463f5, #6c5ce7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: glowPulse 3s infinite;
+    }
 
-    .hero { background: #f8f9fa; padding: 60px 0; }
-    .section { padding: 60px 0; }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+    }
+
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 20px #6c5ce7; }
+      50% { text-shadow: 0 0 40px #a463f5; }
+      100% { text-shadow: 0 0 20px #6c5ce7; }
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #6c5ce7, #a463f5);
+      border: none;
+      padding: 12px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 0 20px #6c5ce7;
+      transition: all 0.4s;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 40px #a463f5;
+    }
+
+    /* ========== SKILLS SECTION ========== */
+    .skill-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px #6c5ce7);
+      transition: transform 0.3s;
+    }
+
+    @media (max-width: 576px) {
+      .skill-card img {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    .skill-card:hover img {
+      transform: rotate(360deg) scale(1.1);
+    }
+
+    /* ========== PROJECT BUTTONS ========== */
+    .project .btn {
+      background: transparent;
+      border: 2px solid #6c5ce7;
+      color: #6c5ce7;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin: 5px;
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+
+    .project .btn:hover {
+      background: #6c5ce7;
+      color: #fff;
+      box-shadow: 0 0 20px #6c5ce7;
+    }
+
+    /* ========== PROJECT EXTENDED DESCRIPTION ========== */
+    .project-description {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(108, 92, 231, 0.3);
+      font-size: 0.95rem;
+      color: #b0b0b0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out, padding 0.3s ease;
+    }
+
+    .project-description.show {
+      max-height: 500px;
+      padding-bottom: 1rem;
+    }
+
+    .project-description ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .project-description li {
+      margin-bottom: 0.3rem;
+    }
+
+    .project-description strong {
+      color: #a463f5;
+    }
+
+    .btn-show-more {
+      background: transparent;
+      border: 1px dashed #6c5ce7;
+      color: #a463f5;
+      border-radius: 20px;
+      padding: 5px 15px;
+      font-size: 0.85rem;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+    }
+
+    .btn-show-more:hover {
+      background: rgba(108, 92, 231, 0.1);
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .btn-show-more i {
+      margin-left: 5px;
+      transition: transform 0.3s;
+    }
+
+    .btn-show-more.active i {
+      transform: rotate(180deg);
+    }
+
+    /* ========== ACCORDION ========== */
+    .accordion .card {
+      margin-bottom: 10px;
+    }
+
+    .accordion .btn-link {
+      color: #a463f5 !important;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: normal;
+      text-align: left;
+    }
+
+    .accordion .btn-link:hover {
+      color: #fff !important;
+    }
+
+    /* ========== RESPONSIVE GRID ========== */
+    @media (max-width: 576px) {
+      .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* ========== EDUCATION IMAGES ========== */
+    .edu-img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 15px #6c5ce7);
+      margin-bottom: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .edu-img:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 576px) {
+      .edu-img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    /* ========== TECH STACK TAGS ========== */
+    .tech-tag {
+      display: inline-block;
+      background: rgba(108, 92, 231, 0.2);
+      border: 1px solid #6c5ce7;
+      border-radius: 15px;
+      padding: 3px 10px;
+      font-size: 0.8rem;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      color: #a463f5;
+    }
+
+    /* ========== CONTACT SECTION ========== */
+    #contact a {
+      color: #a463f5;
+      font-weight: 600;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #6c5ce7;
+    }
+
+    footer {
+      background: rgba(10, 10, 20, 0.9) !important;
+      border-top: 2px solid #6c5ce7;
+      color: #aaa;
+      padding: 20px !important;
+      text-align: center;
+    }
   </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 <body>
   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <a class="navbar-brand" href="#">Nadir A. Elzouki</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active"><a class="nav-link" href="#about">About Me</a></li>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#licenses">Licenses & Certifications</a></li>
+        <li class="nav-item"><a class="nav-link" href="#licenses">Certifications</a></li>
         <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
         <li class="nav-item"><a class="nav-link" href="#languages">Languages</a></li>
-        <li class="nav-item"><a class="nav-link" href="#organizations">Organizations</a></li>
-        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="#organizations">Orgs</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
       </ul>
     </div>
-</nav>
-
+  </nav>
 
   <!-- Hero Section -->
-  <section class="hero text-center">
+  <section class="hero">
     <div class="container">
-      <h1 class="display-4">Hi, I am Nadir 👋</h1>
-      <p class="lead">Full Stack Developer and Freelancer</p>
+      <h1>Hi, I am Nadir 👋</h1>
+      <p class="lead">Full Stack Developer | Web 3.0 Enthusiast | Cybersecurity Specialist</p>
       <a class="btn btn-primary btn-lg" href="#contact">Hire Me</a>
     </div>
   </section>
@@ -139,229 +423,212 @@
   <section id="about" class="section">
     <div class="container">
       <h2>About Me</h2>
-      <p>I'm Nadir and I'm a full stack developer and freelancer. I have a passion for building and designing user-friendly software. I'm also a freelancer and available to work, and I can help you build your next dream project.</p>
+      <p class="lead">I'm Nadir, a full stack developer with over 30 projects in AI, cybersecurity, and web development. I specialize in building decentralized applications and security tools. Available for freelance work worldwide.</p>
     </div>
   </section>
 
-<section id="skills" class="section">
-  <div class="container">
-    <h2 class="text-center mb-4">Skills</h2>
-    <div class="row">
-      <!-- Skill Item -->
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">JavaScript</h5>
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="text-center">Skills</h2>
+      <div class="row">
+        <!-- Programming Languages -->
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+              <h5 class="card-title mt-2">Python</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png" alt="C++" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">C++</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+              <h5 class="card-title mt-2">JavaScript</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/1200px-Logo_C_sharp.svg.png" alt="C#" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">C#</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+              <h5 class="card-title mt-2">C++</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://logodownload.org/wp-content/uploads/2019/10/python-logo.png" alt="Python" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">Python</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
+              <h5 class="card-title mt-2">C#</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://www.php.net/images/logos/php-logo.svg" alt="PHP" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">PHP</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+              <h5 class="card-title mt-2">Java</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://w7.pngwing.com/pngs/405/878/png-transparent-java-logo-java-runtime-environment-computer-icons-java-platform-standard-edition-java-miscellaneous-text-logo-thumbnail.png" alt="Java" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">Java</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+              <h5 class="card-title mt-2">PHP</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://logodownload.org/wp-content/uploads/2019/12/windows-logo.png" alt="Windows" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">Windows</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">
+              <h5 class="card-title mt-2">Swift</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Linux_logo.jpg" alt="Linux" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">Linux</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+              <h5 class="card-title mt-2">TypeScript</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSQLYucWMglagUdrnkBxQ1GEEM0nP9J8cj8g&s" alt="Unix" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">Unix</h5>
+        <!-- Web Technologies -->
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+              <h5 class="card-title mt-2">HTML5</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://i.pinimg.com/736x/5e/30/53/5e3053ed71b367c5e2cc4ecf4099e112.jpg" alt="Apple" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">Apple</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+              <h5 class="card-title mt-2">CSS3</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://w7.pngwing.com/pngs/936/844/png-transparent-git-hd-logo-thumbnail.png" alt="Git" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">Git</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+              <h5 class="card-title mt-2">Bootstrap</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://toppng.com/uploads/preview/github-logo-png-hd-11659780126wgzczltlbm.png" alt="GitHub" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">GitHub</h5>
+        <!-- Databases -->
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+              <h5 class="card-title mt-2">SQL</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO5ryTY9VShCV5uJWhoBXkcxxlFB8O5bbxGA&s" alt="CSS" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">CSS</h5>
+        <!-- Tools -->
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+              <h5 class="card-title mt-2">Git</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">HTML</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+              <h5 class="card-title mt-2">GitHub</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://logovectorseek.com/wp-content/uploads/2019/10/bootstrap-logo-vector.png" alt="Bootstrap" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">Bootstrap</h5>
+        <!-- Operating Systems -->
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+              <h5 class="card-title mt-2">Linux</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt="Typescript" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">Typescript</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows">
+              <h5 class="card-title mt-2">Windows</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/640px-Sql_data_base_with_logo.png" alt="SQL" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">SQL</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple">
+              <h5 class="card-title mt-2">macOS</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuTiCIxcGExISpbuEFg0caOI27K-BVSjybQQ&s" alt="Swift" class="img-fluid" style="width: 50px;">
-            <h5 class="card-title">Swift</h5>
+        <div class="col-md-3 col-sm-4 col-6 text-center mb-4 skill-card">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" alt="Ubuntu">
+              <h5 class="card-title mt-2">Ubuntu</h5>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<style>
-    .skill-logo {
-        width: 40px; /* Adjust size as needed */
-        height: auto;
-        margin-right: 5px;
-    }
-</style>
-
+  </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="section bg-light">
+  <section id="experience" class="section">
     <div class="container">
       <h2>Experience</h2>
       <div class="accordion" id="experienceAccordion">
-        <!-- Apple -->
         <div class="card">
-          <div class="card-header" id="headingOne">
+          <div class="card-header" id="exp1">
             <h5 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Apple - Technical Specialist
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#exp1Collapse">
+                Apple - Technical Specialist (Jun 2022 - Present)
               </button>
             </h5>
           </div>
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#experienceAccordion">
+          <div id="exp1Collapse" class="collapse show" data-parent="#experienceAccordion">
             <div class="card-body">
-              <p><strong>Duration:</strong> Jun 2022 - Present</p>
-              <p><strong>Location:</strong> Boca Raton, Florida, United States</p>
-              <p><strong>Skills:</strong> Skilled Multi-tasker, Computer Science, Help Desk Support, Troubleshooting, Skill Development</p>
+              <p>Technical support and troubleshooting for Apple products. Skilled multi-tasker with expertise in customer service and technical solutions.</p>
             </div>
           </div>
         </div>
-        <!-- Freelancer.com -->
         <div class="card">
-          <div class="card-header" id="headingTwo">
+          <div class="card-header" id="exp2">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Freelancer.com - Freelance Web Developer
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#exp2Collapse">
+                Freelancer.com - Freelance Web Developer (2015 - Present)
               </button>
             </h5>
           </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#experienceAccordion">
+          <div id="exp2Collapse" class="collapse" data-parent="#experienceAccordion">
             <div class="card-body">
-              <p><strong>Duration:</strong> 2015 - Present</p>
-              <p><strong>Location:</strong> Boca Raton, Florida, United States</p>
-              <p><strong>Responsibilities:</strong> Detailed list provided</p>
-              <p><strong>Skills:</strong> Detailed list provided</p>
+              <p>Full-stack development for international clients. Built 30+ projects including AI chatbots, cybersecurity tools, and web applications.</p>
             </div>
           </div>
         </div>
-        <!-- Geek Squad -->
         <div class="card">
-          <div class="card-header" id="headingThree">
+          <div class="card-header" id="exp3">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Geek Squad - Consultation Agent
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#exp3Collapse">
+                Geek Squad - Consultation Agent (Oct 2017 - May 2022)
               </button>
             </h5>
           </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#experienceAccordion">
+          <div id="exp3Collapse" class="collapse" data-parent="#experienceAccordion">
             <div class="card-body">
-              <p><strong>Duration:</strong> Oct 2017 - May 2022</p>
-              <p><strong>Location:</strong> Boca Raton, Florida, United States</p>
-              <p><strong>Responsibilities:</strong> Detailed list provided</p>
-              <p><strong>Impact:</strong> Increased sales of Total Tech Support™ membership, reduced complaints by 10%</p>
-              <p><strong>Awards:</strong> Employee of the Year in 2019 MVP FY'20 YTD</p>
-              <p><strong>Skills:</strong> Skilled Multi-tasker, Computer Science, Help Desk Support, Troubleshooting, Skill Development</p>
+              <p>Technical consultations, increased membership sales by 20%, reduced complaints by 10%. Employee of the Year 2019.</p>
             </div>
           </div>
         </div>
@@ -369,357 +636,1241 @@
     </div>
   </section>
 
-
-  <section id="projects" class="container">
-    <h2 class="mb-4 text-center">Projects</h2>
-    <div class="row">
-
-        <!-- My Portfolio Project -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://yt3.ggpht.com/2q9s2L8896TSnMksygBxoSlOPU5K8qWvSYgB3ALug6y6bEjz1COq_ab9icTeEfrfimjwi577-sft=s991-c-fcrop64=1,3b820000c47dffff-rw-nd-v1" alt="My Portfolio" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">My Portfolio</h5>
-                    <p class="card-text"><strong>Jan 2024 - Mar 2024</strong></p>
-                    <p>My portfolio showcases my skills and projects as a full stack developer. Developed using JavaScript, HTML, CSS, and Bootstrap, it highlights my passion for creating user-friendly software.</p>
-                    <a href="https://github.com/Nelzouki22/Myportfolio" class="btn btn-primary" target="_blank">View on GitHub</a>
-                </div>
+  <!-- Projects Section (ALL 28 PROJECTS) -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="text-center">Projects</h2>
+      <div class="row">
+        <!-- المشروع 1: AI Medical Assistant -->
+        <div class="col-md-4 mb-4 project" id="project1">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🏥 AI Medical Assistant</h5>
+              <p><strong>Aug 2025 – Oct 2025</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">spaCy</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">NLP</span>
+              </div>
+              <p>Healthcare chatbot with symptom analysis and multi-language support.</p>
+              <div class="project-description" id="desc1">
+                <p><strong>🚀 Key Features:</strong></p>
+                <ul>
+                  <li>Intelligent symptom analysis using <strong>spaCy NLP</strong></li>
+                  <li>Multi-language support (English & Arabic)</li>
+                  <li>Secure user authentication with Flask-Login</li>
+                  <li>Appointment scheduling system</li>
+                  <li>RESTful API for mobile integration</li>
+                  <li>Responsive design for all devices</li>
+                </ul>
+                <p><strong>💡 Business Impact:</strong> Reduce healthcare costs through AI triage, improve patient experience with 24/7 support, scalable solution for clinics.</p>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc1', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/medical_app" class="btn" target="_blank">GitHub</a>
+                <a href="https://www.youtube.com/watch?v=P3Y-eWuWCOs" class="btn" target="_blank">YouTube</a>
+              </div>
             </div>
+          </div>
         </div>
 
-        <!-- Mars Defense Game -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://media.licdn.com/dms/image/v2/D4E2DAQHWR57I73hxAw/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1726019496967?e=1727056800&v=beta&t=bE72pDCGLXa8vtHAkvCae8rc7Em8mqDMz_Xkwm2YfyE" alt="Mars Defense Game" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Mars Defense Game</h5>
-                    <p class="card-text"><strong>Mar 2024 - Sep 2024</strong></p>
-                    <p>Developed a 2D action game using Python and Pygame where players control a tank to defend against enemy platforms and UFOs on Mars.</p>
-                    <a href="https://github.com/Nelzouki22/Mars-Defense-Game" class="btn btn-primary" target="_blank">View on GitHub</a>
-                </div>
+        <!-- المشروع 2: Simple Anti Virus -->
+        <div class="col-md-4 mb-4 project" id="project2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🛡️ Simple Anti Virus</h5>
+              <p><strong>Oct 2024 – Aug 2025</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Cybersecurity</span>
+                <span class="tech-tag">File Monitoring</span>
+                <span class="tech-tag">Malware Detection</span>
+              </div>
+              <p>Python-based antivirus monitoring file changes and detecting malicious activities.</p>
+              <div class="project-description" id="desc2">
+                <p><strong>🔍 What You'll Learn:</strong></p>
+                <ul>
+                  <li>How to use Python to monitor file system changes</li>
+                  <li>How viruses replicate themselves and detection methods</li>
+                  <li>Implement basic antivirus features: file scanning, monitoring, suspicious activity detection</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc2', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22" class="btn" target="_blank">GitHub</a>
+                <a href="https://www.youtube.com/watch?v=mRDX0OJRd1g" class="btn" target="_blank">YouTube</a>
+              </div>
             </div>
+          </div>
         </div>
 
-        <!-- Basic Movement and Key Presses -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://media.licdn.com/dms/image/v2/D4E2DAQG_-Buom3rQ5g/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1726195700454?e=1727056800&v=beta&t=AduOuWZzOm6aJqkhXZeiFPwihD51FG3s-i76-L7k-jM" alt="Basic Movement and Key Presses" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Basic Movement and Key Presses</h5>
-                    <p class="card-text"><strong>Jan 2024 - Mar 2024</strong></p>
-                    <p>A beginner-friendly project that demonstrates how to build a simple game environment using the Pygame library in Python.</p>
-                    <a href="https://github.com/Nelzouki22/Basic-Movement-Key-Presses" class="btn btn-primary" target="_blank">View on GitHub</a>
-                </div>
+        <!-- المشروع 3: StockPulse -->
+        <div class="col-md-4 mb-4 project" id="project3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">📈 StockPulse</h5>
+              <p><strong>Aug 2024 – Aug 2025</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">PWA</span>
+                <span class="tech-tag">API</span>
+                <span class="tech-tag">Chart.js</span>
+                <span class="tech-tag">Multi-language</span>
+              </div>
+              <p>PWA stock tracker with live updates and interactive charts.</p>
+              <div class="project-description" id="desc3">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Live stock updates every 5 seconds ⏱</li>
+                  <li>Instant alerts for price changes ≥1% 📊</li>
+                  <li>Support for English, Arabic, Italian 🌍</li>
+                  <li>Interactive charts with Chart.js 📈</li>
+                  <li>Track multiple stocks & save favorites ⭐</li>
+                  <li>PWA installation on mobile & desktop</li>
+                  <li>Batch processing to avoid API limits</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc3', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/StockPulse" class="btn" target="_blank">GitHub</a>
+              </div>
             </div>
+          </div>
         </div>
 
-        <!-- Pong Game -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://media.licdn.com/dms/image/v2/D4E2DAQEbsicAEZzCJQ/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1726366636353?e=1727056800&v=beta&t=3yeSIopzYcXeugiEuPgTpRp7_V-0qQPwLozrGjooFWw" alt="Pong Game" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Pong Game</h5>
-                    <p class="card-text"><strong>Jan 2024 - Mar 2024</strong></p>
-                    <p>A classic implementation of the Pong game using Pygame, where players control paddles to hit the ball back and forth.</p>
-                    <a href="https://github.com/Nelzouki22/Pong-Game" class="btn btn-primary" target="_blank">View on GitHub</a>
-                </div>
+        <!-- المشروع 4: Smart Notes App -->
+        <div class="col-md-4 mb-4 project" id="project4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">📝 Smart Notes App</h5>
+              <p><strong>Mar 2025 – Aug 2025</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">PWA</span>
+              </div>
+              <p>Offline-first note-taking with voice-to-text and dark mode.</p>
+              <div class="project-description" id="desc4">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Works online & offline</li>
+                  <li>Dark/Light mode support</li>
+                  <li>Voice-to-text recognition</li>
+                  <li>Instant search functionality</li>
+                  <li>JSON export/import</li>
+                  <li>Fully responsive (PC, iOS, Android)</li>
+                  <li>Available in Arabic, English, Italian</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc4', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/NoteAppTS" class="btn" target="_blank">GitHub</a>
+              </div>
             </div>
+          </div>
         </div>
 
+        <!-- المشروع 5: Letter Combinations -->
+        <div class="col-md-4 mb-4 project" id="project5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🔢 Letter Combinations</h5>
+              <p><strong>Mar 2025</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">Backtracking</span>
+              </div>
+              <p>Interactive UI generating letter combinations from phone digits.</p>
+              <div class="project-description" id="desc5">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Interactive UI with clean design</li>
+                  <li>Efficient backtracking algorithm</li>
+                  <li>Input validation (digits 2-9 only)</li>
+                  <li>Dynamic real-time output display</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc5', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/Letter-Combinations-of-a-Phone-Number" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 6: Real-Time News App -->
+        <div class="col-md-4 mb-4 project" id="project6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">📰 Real-Time News App</h5>
+              <p><strong>Mar 2025</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">API</span>
+                <span class="tech-tag">Bootstrap</span>
+              </div>
+              <p>News aggregator with category filtering and dark mode.</p>
+              <div class="project-description" id="desc6">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Headline News display</li>
+                  <li>Smooth scrolling category selection</li>
+                  <li>Dark/Light mode with localStorage</li>
+                  <li>Error handling for API failures</li>
+                  <li>Real-time news fetching</li>
+                  <li>Multiple categories: Business, Entertainment, Health, Science, Sports, Technology</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc6', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 7: Password Strength Checker -->
+        <div class="col-md-4 mb-4 project" id="project7">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🔐 Password Strength Checker</h5>
+              <p><strong>Oct 2024 – Jan 2025</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Regex</span>
+                <span class="tech-tag">Encryption</span>
+              </div>
+              <p>Tool evaluating password strength based on complexity.</p>
+              <div class="project-description" id="desc7">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Length assessment</li>
+                  <li>Complexity evaluation (special chars, numbers, case)</li>
+                  <li>Repetition pattern analysis</li>
+                  <li>Real-time feedback</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc7', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 8: Replicates Itself Virus -->
+        <div class="col-md-4 mb-4 project" id="project8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🦠 Replicates Itself Virus</h5>
+              <p><strong>Oct 2024 – Jan 2025</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Cybersecurity</span>
+                <span class="tech-tag">Malware</span>
+                <span class="tech-tag">Educational</span>
+              </div>
+              <p>Educational script demonstrating self-replicating malware behavior.</p>
+              <div class="project-description" id="desc8">
+                <p><strong>🔍 Highlights:</strong></p>
+                <ul>
+                  <li>Understanding self-replication mechanisms</li>
+                  <li>Educational purposes only</li>
+                  <li>Learn malware behavior patterns</li>
+                  <li>Foundation for cybersecurity studies</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc8', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 9: Simple SIEM System -->
+        <div class="col-md-4 mb-4 project" id="project9">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">📊 Simple SIEM System</h5>
+              <p><strong>Oct 2024 – Jan 2025</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">WMI</span>
+                <span class="tech-tag">Windows</span>
+                <span class="tech-tag">Security</span>
+              </div>
+              <p>Security Information and Event Management system for Windows logs.</p>
+              <div class="project-description" id="desc9">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Read system logs from Windows Event Viewer</li>
+                  <li>Filter critical and error events</li>
+                  <li>Export filtered logs to text file</li>
+                  <li>WMI integration for Windows management</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc9', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 10: Malware Analyzer -->
+        <div class="col-md-4 mb-4 project" id="project10">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🔍 Website Malware Analyzer</h5>
+              <p><strong>Oct 2024 – Nov 2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">BeautifulSoup</span>
+                <span class="tech-tag">Requests</span>
+                <span class="tech-tag">Web Scraping</span>
+              </div>
+              <p>Tool to detect malware indicators on websites.</p>
+              <div class="project-description" id="desc10">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Malware detection via keyword analysis</li>
+                  <li>User-friendly console interface</li>
+                  <li>Robust error handling</li>
+                  <li>Network security analysis</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc10', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/Malware-Analysis-sites" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 11: Volunteer Manager (Swift) -->
+        <div class="col-md-4 mb-4 project" id="project11">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">👥 Volunteer Manager</h5>
+              <p><strong>Oct 2024 – Nov 2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Swift</span>
+                <span class="tech-tag">iOS</span>
+                <span class="tech-tag">Xcode</span>
+                <span class="tech-tag">OOP</span>
+              </div>
+              <p>Swift iOS app for managing volunteer information.</p>
+              <div class="project-description" id="desc11">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Volunteer info management (name, phone, email, age)</li>
+                  <li>Phone number validation with error handling</li>
+                  <li>CustomStringConvertible protocol implementation</li>
+                  <li>Clean, reusable, scalable Swift code</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc11', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/Volunteer-Manager-update-" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 12: News App Python -->
+        <div class="col-md-4 mb-4 project" id="project12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🐍 News App (Python)</h5>
+              <p><strong>Oct 2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Tkinter</span>
+                <span class="tech-tag">NewsAPI</span>
+                <span class="tech-tag">GUI</span>
+              </div>
+              <p>Desktop news aggregator with CSV export.</p>
+              <div class="project-description" id="desc12">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Fetch news by category and country</li>
+                  <li>Clickable URLs for full articles</li>
+                  <li>Save articles to CSV file</li>
+                  <li>Responsive Tkinter GUI</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc12', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 13: Currency Converter -->
+        <div class="col-md-4 mb-4 project" id="project13">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">💱 Currency Converter</h5>
+              <p><strong>Oct 2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Tkinter</span>
+                <span class="tech-tag">API</span>
+                <span class="tech-tag">ExchangeRate</span>
+              </div>
+              <p>Real-time currency converter with GUI.</p>
+              <div class="project-description" id="desc13">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>User-friendly Tkinter interface</li>
+                  <li>Real-time exchange rates via API</li>
+                  <li>Multiple currency support</li>
+                  <li>Robust error handling</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc13', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 14: Phishing Simulation -->
+        <div class="col-md-4 mb-4 project" id="project14">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🎣 Phishing Simulation</h5>
+              <p><strong>Oct 2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">HTML/CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <p>Educational social engineering simulator.</p>
+              <div class="project-description" id="desc14">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Realistic phishing email scenarios</li>
+                  <li>Interactive user choices with feedback</li>
+                  <li>Educational resources about phishing</li>
+                  <li>Prize-winning simulation for engagement</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc14', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22" class="btn" target="_blank">GitHub</a>
+                <a href="https://youtu.be/H3tHcZQqUvA" class="btn" target="_blank">YouTube</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 15: Picture Puzzle Game -->
+        <div class="col-md-4 mb-4 project" id="project15">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🧩 Picture Puzzle Game</h5>
+              <p><strong>Sep 2024 – Oct 2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pygame</span>
+                <span class="tech-tag">Game Dev</span>
+                <span class="tech-tag">Image Processing</span>
+              </div>
+              <p>Turn any image into a shuffled tile puzzle.</p>
+              <div class="project-description" id="desc15">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Select any image from computer</li>
+                  <li>Customizable grid and shuffling</li>
+                  <li>Interactive tile-clicking to move pieces</li>
+                  <li>Clean, simple interface</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc15', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 16: Anti Virus C++ -->
+        <div class="col-md-4 mb-4 project" id="project16">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">⚙️ Anti Virus C++</h5>
+              <p><strong>Sep 2024 – Oct 2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">File System</span>
+                <span class="tech-tag">Malware Detection</span>
+                <span class="tech-tag">CLI</span>
+              </div>
+              <p>C++ antivirus with file monitoring.</p>
+              <div class="project-description" id="desc16">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>File monitoring for changes</li>
+                  <li>Signature-based detection</li>
+                  <li>Command-line interface</li>
+                  <li>Real-time alerts</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc16', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 17: Smart Home Automation -->
+        <div class="col-md-4 mb-4 project" id="project17">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🏠 Smart Home Automation</h5>
+              <p><strong>Sep 2024 – Oct 2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">IoT</span>
+              </div>
+              <p>Web-based control for smart devices.</p>
+              <div class="project-description" id="desc17">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Control lights, ACs, fans via web interface</li>
+                  <li>Real-time device status monitoring</li>
+                  <li>Flask API backend</li>
+                  <li>Expandable for MQTT IoT integration</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc17', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/SmartHomeAutomation2024" class="btn" target="_blank">GitHub</a>
+                <a href="https://youtu.be/EbOvR3jF9Co" class="btn" target="_blank">YouTube</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 18: Mars Defense Game -->
+        <div class="col-md-4 mb-4 project" id="project18">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">👾 Mars Defense Game</h5>
+              <p><strong>Mar 2024 – Sep 2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pygame</span>
+                <span class="tech-tag">Game Dev</span>
+                <span class="tech-tag">2D</span>
+              </div>
+              <p>2D action game defending Mars from UFOs.</p>
+              <div class="project-description" id="desc18">
+                <p><strong>🎮 Features:</strong></p>
+                <ul>
+                  <li>Tank control with rocket shooting</li>
+                  <li>Enemy platforms and moving UFOs</li>
+                  <li>Real-time collision detection</li>
+                  <li>Victory screen on enemy defeat</li>
+                  <li>Orange Martian background</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc18', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/Mars-Defense-Game" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 19: Password Manager -->
+        <div class="col-md-4 mb-4 project" id="project19">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🔑 Password Manager</h5>
+              <p><strong>2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Encryption</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Security</span>
+              </div>
+              <p>Secure password manager with encryption.</p>
+              <div class="project-description" id="desc19">
+                <p><strong>🔐 Features:</strong></p>
+                <ul>
+                  <li>Full encryption for data protection</li>
+                  <li>Available on GitHub and Docker</li>
+                  <li>Multi-language support (EN/AR/IT)</li>
+                  <li>Easy-to-use interface</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc19', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/PasswordManagerUpadate" class="btn" target="_blank">GitHub</a>
+                <a href="https://hub.docker.com/r/nadirelzouki/password-manager" class="btn" target="_blank">Docker</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 20: Basic Movement Pygame -->
+        <div class="col-md-4 mb-4 project" id="project20">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🎮 Basic Movement Pygame</h5>
+              <p><strong>Jan 2024 – Mar 2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pygame</span>
+                <span class="tech-tag">Game Dev</span>
+                <span class="tech-tag">Beginner</span>
+              </div>
+              <p>Beginner-friendly Pygame movement tutorial.</p>
+              <div class="project-description" id="desc20">
+                <p><strong>📚 Features:</strong></p>
+                <ul>
+                  <li>2D game window setup</li>
+                  <li>Keyboard event handling</li>
+                  <li>Character movement in multiple directions</li>
+                  <li>Smooth game loop updates</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc20', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/Basic-Movement-Key-Presses" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 21: Pong Game -->
+        <div class="col-md-4 mb-4 project" id="project21">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🏓 Pong Game</h5>
+              <p><strong>Jan 2024 – Mar 2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pygame</span>
+                <span class="tech-tag">Game Dev</span>
+                <span class="tech-tag">Classic</span>
+              </div>
+              <p>Classic Pong game implementation.</p>
+              <div class="project-description" id="desc21">
+                <p><strong>🎮 Features:</strong></p>
+                <ul>
+                  <li>Paddle controls with arrow and W/S keys</li>
+                  <li>Dynamic ball mechanics</li>
+                  <li>Accurate collision detection</li>
+                  <li>Automatic ball reset</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc21', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/Pong-Pong" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 22: Image Viewer API -->
+        <div class="col-md-4 mb-4 project" id="project22">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🖼️ Image Viewer API</h5>
+              <p><strong>2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Tkinter</span>
+                <span class="tech-tag">PIL</span>
+                <span class="tech-tag">GUI</span>
+              </div>
+              <p>Image viewer supporting multiple formats.</p>
+              <div class="project-description" id="desc22">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Support for JPG, PNG, GIF, BMP formats</li>
+                  <li>Dynamic image resizing</li>
+                  <li>Robust error handling</li>
+                  <li>Lightweight and efficient</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc22', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 23: Link Shortener -->
+        <div class="col-md-4 mb-4 project" id="project23">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🔗 Link Shortener</h5>
+              <p><strong>2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <p>URL shortener using is.gd API.</p>
+              <div class="project-description" id="desc23">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Simple user interface</li>
+                  <li>No API key required</li>
+                  <li>Responsive Bootstrap design</li>
+                  <li>Copy URL functionality</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc23', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/MyLinkShortener" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 24: Movie Project SwiftUI -->
+        <div class="col-md-4 mb-4 project" id="project24">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🎬 Movie Project SwiftUI</h5>
+              <p><strong>2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Swift</span>
+                <span class="tech-tag">SwiftUI</span>
+                <span class="tech-tag">iOS</span>
+                <span class="tech-tag">CRUD</span>
+              </div>
+              <p>iOS app for managing movie collections.</p>
+              <div class="project-description" id="desc24">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Add movies with title, rating, categories</li>
+                  <li>Swipe to delete movies</li>
+                  <li>Instant search by title</li>
+                  <li>State management with @ObservableObject</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc24', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/Movie-Project-SwiftUI-Movie-Management-App" class="btn" target="_blank">GitHub</a>
+                <a href="https://www.youtube.com/watch?v=gSQcRxSKtsk" class="btn" target="_blank">YouTube</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 25: Calculator Tkinter -->
+        <div class="col-md-4 mb-4 project" id="project25">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🧮 Calculator Tkinter</h5>
+              <p><strong>2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Tkinter</span>
+                <span class="tech-tag">GUI</span>
+                <span class="tech-tag">Beginner</span>
+              </div>
+              <p>Simple GUI calculator with error handling.</p>
+              <div class="project-description" id="desc25">
+                <p><strong>✨ Features:</strong></p>
+                <ul>
+                  <li>Basic arithmetic operations</li>
+                  <li>Clear button functionality</li>
+                  <li>Error handling for invalid inputs</li>
+                  <li>User-friendly Tkinter interface</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc25', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/Calculator-Using-Tkinter" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 26: Twitter Scraper -->
+        <div class="col-md-4 mb-4 project" id="project26">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🐦 Twitter Scraper</h5>
+              <p><strong>2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Tweepy</span>
+                <span class="tech-tag">API</span>
+                <span class="tech-tag">Data Analysis</span>
+              </div>
+              <p>Twitter scraping with Tweepy library.</p>
+              <div class="project-description" id="desc26">
+                <p><strong>📊 Features:</strong></p>
+                <ul>
+                  <li>API authentication with Twitter</li>
+                  <li>Fetch tweets and analyze user relationships</li>
+                  <li>Gather insights for trends and public opinion</li>
+                  <li>Data analysis techniques</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc26', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/Scraping-Twitter-with-Python" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 27: Weather API -->
+        <div class="col-md-4 mb-4 project" id="project27">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">☁️ Weather API</h5>
+              <p><strong>2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Tkinter</span>
+                <span class="tech-tag">OpenWeatherMap</span>
+                <span class="tech-tag">API</span>
+              </div>
+              <p>Real-time weather data application.</p>
+              <div class="project-description" id="desc27">
+                <p><strong>🌤️ Features:</strong></p>
+                <ul>
+                  <li>Real-time weather data (temperature, humidity, wind)</li>
+                  <li>City search functionality</li>
+                  <li>Weather condition icons</li>
+                  <li>Tkinter GUI interface</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc27', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/Weather-API" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروع 28: Caterpillar Game -->
+        <div class="col-md-4 mb-4 project" id="project28">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🐛 Caterpillar Game</h5>
+              <p><strong>2024</strong></p>
+              <div class="tech-tags mb-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pygame</span>
+                <span class="tech-tag">Game Dev</span>
+                <span class="tech-tag">Snake-like</span>
+              </div>
+              <p>Classic snake-like game with caterpillar.</p>
+              <div class="project-description" id="desc28">
+                <p><strong>🎮 Features:</strong></p>
+                <ul>
+                  <li>Caterpillar grows by eating food</li>
+                  <li>Collision detection with edges and itself</li>
+                  <li>Random food generation</li>
+                  <li>Keyboard controls for direction</li>
+                  <li>Game over screen with play again option</li>
+                </ul>
+              </div>
+              <button class="btn-show-more" onclick="toggleDescription('desc28', this)">Show More <i class="fas fa-chevron-down"></i></button>
+              <div class="mt-2">
+                <a href="https://github.com/Nelzouki22/Caterpillar-Game-2024" class="btn" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-
-
+  </section>
 
   <!-- Licenses & Certifications Section -->
-<section id="licenses" class="section">
-  <div class="container">
-    <h2 class="text-center mb-4">Licenses & Certifications</h2>
-    <div class="accordion" id="licensesAccordion">
-      <!-- IBM IT Support Professional Certificate -->
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              IBM IT Support Professional Certificate
-            </button>
-          </h5>
-        </div>
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#licensesAccordion">
-          <div class="card-body">
-            <p><strong>Issued by:</strong> Coursera</p>
-            <p><strong>Issued:</strong> Aug 2024</p>
-            <p><strong>Credential ID:</strong> Q04D7GL1NLCM</p>
-            <a class="btn btn-primary" href="https://www.coursera.org/account/accomplishments/specialization/certificate/Q04D7GL1NLCM" target="_blank">Show Credential</a>
+  <section id="licenses" class="section">
+    <div class="container">
+      <h2 class="text-center">Licenses & Certifications</h2>
+      <div class="accordion" id="licensesAccordion">
+        <!-- Microsoft Cloud Support -->
+        <div class="card">
+          <div class="card-header" id="cert1">
+            <h5 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#cert1Collapse">
+                Microsoft Cloud Support Associate (Oct 2025)
+              </button>
+            </h5>
+          </div>
+          <div id="cert1Collapse" class="collapse show" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Microsoft (Coursera) | ID: CV0V7V9YBOKB</div>
           </div>
         </div>
-      </div>
-      <!-- Meta Front-End Developer -->
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Meta Front-End Developer
-            </button>
-          </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#licensesAccordion">
-          <div class="card-body">
-            <p><strong>Issued by:</strong> Coursera</p>
-            <p><strong>Issued:</strong> Nov 2023</p>
-            <p><strong>Credential ID:</strong> DJA775B5XV6P</p>
-            <a class="btn btn-primary" href="https://www.coursera.org/account/accomplishments/specialization/certificate/DJA775B5XV6P" target="_blank">Show Credential</a>
+        
+        <!-- Microsoft IT Support -->
+        <div class="card">
+          <div class="card-header" id="cert2">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert2Collapse">
+                Microsoft IT Support (Oct 2025)
+              </button>
+            </h5>
+          </div>
+          <div id="cert2Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Microsoft (Coursera) | ID: VTQ2D8RKD1WI</div>
           </div>
         </div>
-      </div>
-      <!-- SAP Technology Consultant -->
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              SAP Technology Consultant
-            </button>
-          </h5>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#licensesAccordion">
-          <div class="card-body">
-            <p><strong>Issued by:</strong> Coursera</p>
-            <p><strong>Issued:</strong> Nov 2023</p>
-            <p><strong>Credential ID:</strong> 2H3MXNYARXRC</p>
-            <a class="btn btn-primary" href="https://www.coursera.org/account/accomplishments/professional-cert/2H3MXNYARXRC" target="_blank">Show Credential</a>
+        
+        <!-- Microsoft Python Development -->
+        <div class="card">
+          <div class="card-header" id="cert3">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert3Collapse">
+                Microsoft Python Development (Feb 2025)
+              </button>
+            </h5>
+          </div>
+          <div id="cert3Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Microsoft (Coursera) | ID: MU69FHVRYEUJ</div>
           </div>
         </div>
-      </div>
-      <!-- Google Cybersecurity -->
-      <div class="card">
-        <div class="card-header" id="headingFour">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              Google Cybersecurity
-            </button>
-          </h5>
-        </div>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#licensesAccordion">
-          <div class="card-body">
-            <p><strong>Issued by:</strong> Coursera</p>
-            <p><strong>Issued:</strong> May 2023</p>
-            <p><strong>Credential ID:</strong> BPYF9Y3S6R9B</p>
-            <a class="btn btn-primary" href="https://www.coursera.org/account/accomplishments/professional-cert/BPYF9Y3S6R9B" target="_blank">Show Credential</a>
+        
+        <!-- IBM and ISC2 Cybersecurity -->
+        <div class="card">
+          <div class="card-header" id="cert4">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert4Collapse">
+                IBM and ISC2 Cybersecurity Specialist (Apr 2025)
+              </button>
+            </h5>
+          </div>
+          <div id="cert4Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by IBM & ISC2 | ID: TL3C27SBT3DW</div>
           </div>
         </div>
-      </div>
-      <!-- Google IT Support Certificate -->
-      <div class="card">
-        <div class="card-header" id="headingFive">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-              Google IT Support Certificate
-            </button>
-          </h5>
-        </div>
-        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#licensesAccordion">
-          <div class="card-body">
-            <p><strong>Issued by:</strong> Coursera</p>
-            <p><strong>Issued:</strong> May 2023</p>
-            <p><strong>Credential ID:</strong> 5NG2FSZG5WVN</p>
-            <a class="btn btn-primary" href="https://www.coursera.org/account/accomplishments/professional-cert/5NG2FSZG5WVN" target="_blank">Show Credential</a>
+        
+        <!-- Meta Back-End Developer -->
+        <div class="card">
+          <div class="card-header" id="cert5">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert5Collapse">
+                Meta Back-End Developer (Jan 2023)
+              </button>
+            </h5>
+          </div>
+          <div id="cert5Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Meta (Coursera) | ID: XUAYZDGZ3YYF</div>
           </div>
         </div>
-      </div>
-      <!-- Meta iOS Developer -->
-      <div class="card">
-        <div class="card-header" id="headingSix">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-              Meta iOS Developer
-            </button>
-          </h5>
-        </div>
-        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#licensesAccordion">
-          <div class="card-body">
-            <p><strong>Issued by:</strong> Coursera</p>
-            <p><strong>Issued:</strong> May 2023</p>
-            <p><strong>Credential ID:</strong> TV4PMHGW7G2Y</p>
-            <a class="btn btn-primary" href="https://www.coursera.org/account/accomplishments/professional-cert/TV4PMHGW7G2Y" target="_blank">Show Credential</a>
+        
+        <!-- Microsoft Front-End Developer -->
+        <div class="card">
+          <div class="card-header" id="cert6">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert6Collapse">
+                Microsoft Front-End Developer (Nov 2024)
+              </button>
+            </h5>
+          </div>
+          <div id="cert6Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Microsoft (Coursera) | ID: D6UEKFSSARZK</div>
           </div>
         </div>
-      </div>
-      <!-- Palo Alto Networks Cybersecurity Professional Certificate -->
-      <div class="card">
-        <div class="card-header" id="headingSeven">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-              Palo Alto Networks Cybersecurity Professional Certificate
-            </button>
-          </h5>
-        </div>
-        <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#licensesAccordion">
-          <div class="card-body">
-            <p><strong>Issued by:</strong> Palo Alto Networks</p>
-            <p><strong>Issued:</strong> Apr 2023</p>
-            <p><strong>Credential ID:</strong> 7F53MRCFR4ZJ</p>
-            <a class="btn btn-primary" href="https://www.coursera.org/account/accomplishments/specialization/certificate/7F53MRCFR4ZJ" target="_blank">Show Credential</a>
+        
+        <!-- IBM IT Support -->
+        <div class="card">
+          <div class="card-header" id="cert7">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert7Collapse">
+                IBM IT Support Professional (Aug 2024)
+              </button>
+            </h5>
+          </div>
+          <div id="cert7Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Coursera | ID: Q04D7GL1NLCM</div>
           </div>
         </div>
-      </div>
-      <!-- IBM Cybersecurity Analyst -->
-      <div class="card">
-        <div class="card-header" id="headingEight">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-              IBM Cybersecurity Analyst
-            </button>
-          </h5>
+        
+        <!-- Meta Front-End Developer -->
+        <div class="card">
+          <div class="card-header" id="cert8">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert8Collapse">
+                Meta Front-End Developer (Nov 2023)
+              </button>
+            </h5>
+          </div>
+          <div id="cert8Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Coursera | ID: DJA775B5XV6P</div>
+          </div>
         </div>
-        <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#licensesAccordion">
-          <div class="card-body">
-            <p><strong>Issued by:</strong> IBM</p>
-            <p><strong>Issued:</strong> Mar 2023</p>
-            <p><strong>Credential ID:</strong> XTY8VHFWX8VY</p>
-            <a class="btn btn-primary" href="https://www.coursera.org/account/accomplishments/specialization/certificate/XTY8VHFWX8VY" target="_blank">Show Credential</a>
+        
+        <!-- SAP Technology Consultant -->
+        <div class="card">
+          <div class="card-header" id="cert9">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert9Collapse">
+                SAP Technology Consultant (Nov 2023)
+              </button>
+            </h5>
+          </div>
+          <div id="cert9Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Coursera | ID: 2H3MXNYARXRC</div>
+          </div>
+        </div>
+        
+        <!-- Google Cybersecurity -->
+        <div class="card">
+          <div class="card-header" id="cert10">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert10Collapse">
+                Google Cybersecurity (May 2023)
+              </button>
+            </h5>
+          </div>
+          <div id="cert10Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Coursera | ID: BPYF9Y3S6R9B</div>
+          </div>
+        </div>
+        
+        <!-- Meta iOS Developer -->
+        <div class="card">
+          <div class="card-header" id="cert11">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert11Collapse">
+                Meta iOS Developer (May 2023)
+              </button>
+            </h5>
+          </div>
+          <div id="cert11Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Coursera | ID: TV4PMHGW7G2Y</div>
+          </div>
+        </div>
+        
+        <!-- Palo Alto Networks Cybersecurity -->
+        <div class="card">
+          <div class="card-header" id="cert12">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert12Collapse">
+                Palo Alto Networks Cybersecurity (Apr 2023)
+              </button>
+            </h5>
+          </div>
+          <div id="cert12Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Palo Alto Networks | ID: 7F53MRCFR4ZJ</div>
+          </div>
+        </div>
+        
+        <!-- IBM Cybersecurity Analyst -->
+        <div class="card">
+          <div class="card-header" id="cert13">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert13Collapse">
+                IBM Cybersecurity Analyst (Mar 2023)
+              </button>
+            </h5>
+          </div>
+          <div id="cert13Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by IBM | ID: XTY8VHFWX8VY</div>
+          </div>
+        </div>
+        
+        <!-- Apple Certified iOS Technician -->
+        <div class="card">
+          <div class="card-header" id="cert14">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert14Collapse">
+                Apple Certified iOS Technician (ACiT)
+              </button>
+            </h5>
+          </div>
+          <div id="cert14Collapse" class="collapse" data-parent="#licensesAccordion">
+            <div class="card-body">Issued by Apple | ID: 372220992</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Education Section -->
-<section id="education" class="section bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Education</h2>
-    <div class="row mb-4">
-      <div class="col-md-6 text-center">
-        <img src="https://academy.edu.ly/storage/media/f032ecd3-042a-4a35-a9b4-372133f1a57e/1D921F33-14B9-44BA-B4A6-8E541ACA455F.webp" alt="Libyan Academy" class="img-fluid mb-2" style="width: 100px;">
-        <h4>Libyan Academy</h4>
-        <p><strong>Minor Master Degree:</strong> Information Technology</p>
-        <p><strong>Duration:</strong> Aug 2005 - Jan 2009</p>
-        <p><strong>Grade:</strong> 3.25</p>
-        <p><strong>Relevant Coursework:</strong> Programming Languages, Software Engineering, Computer Network, Fuzzy Logic, Information Modeling</p>
-      </div>
-      <div class="col-md-6 text-center">
-        <img src="https://uob.edu.ly/wp-content/uploads/2020/04/University-of-Benghazi-logo-2020.png" alt="University of Benghazi" class="img-fluid mb-2" style="width: 100px;">
-        <h4>University of Benghazi (Garyounis)</h4>
-        <p><strong>Bachelor Degree:</strong> Computer Science</p>
-        <p><strong>Duration:</strong> Sep 2000 - Jul 2004</p>
-        <p><strong>Grade:</strong> 2.9</p>
-        <p><strong>Relevant Coursework:</strong> Algorithms, Data Structures, Operating Systems, Database Management, Artificial Intelligence, Software Development, Web Development</p>
+  <!-- Education Section (WITH IMAGES) -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="text-center">Education</h2>
+      <div class="row">
+        <div class="col-md-6 text-center mb-4">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://academy.edu.ly/storage/media/f032ecd3-042a-4a35-a9b4-372133f1a57e/1D921F33-14B9-44BA-B4A6-8E541ACA455F.webp" alt="Libyan Academy" class="edu-img" onerror="this.src='https://via.placeholder.com/100x100/1a1a2e/6c5ce7?text=LA'">
+              <h4>Libyan Academy</h4>
+              <p><strong>Minor Master:</strong> Information Technology</p>
+              <p>2005 - 2009 | GPA: 3.25</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-center mb-4">
+          <div class="card">
+            <div class="card-body">
+              <img src="https://uob.edu.ly/wp-content/uploads/2020/04/University-of-Benghazi-logo-2020.png" alt="University of Benghazi" class="edu-img" onerror="this.src='https://via.placeholder.com/100x100/1a1a2e/6c5ce7?text=UOB'">
+              <h4>University of Benghazi</h4>
+              <p><strong>Bachelor:</strong> Computer Science</p>
+              <p>2000 - 2004 | GPA: 2.9</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Languages Section -->
   <section id="languages" class="section">
     <div class="container">
       <h2>Languages</h2>
-      <ul>
-        <li><strong>English:</strong> Native Proficiency</li>
-        <li><strong>Arabic:</strong> Native Proficiency</li>
-        <li><strong>Italain:</strong> Elementary proficiency</li>
-      </ul>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5>🇺🇸 English</h5>
+              <p>Native Proficiency</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5>🇸🇦 Arabic</h5>
+              <p>Native Proficiency</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5>🇮🇹 Italian</h5>
+              <p>Elementary</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
- <!-- Organizations Section --> 
-<section id="organizations" class="section bg-light">
-  <div class="container">
-    <h2>Organizations</h2>
-    <div class="accordion" id="organizationsAccordion">
-      <!-- South Florida Python Users Group (SoFloPy) -->
-      <div class="card">
-        <div class="card-header" id="orgOne">
-          <h5 class="mb-0 d-flex align-items-center">
-            <img src="https://media.licdn.com/dms/image/v2/C560BAQEwTNaVJ6roqw/company-logo_200_200/company-logo_200_200/0/1631388915626?e=2147483647&v=beta&t=f2etp_AYnhfU8eeFh49e-2bHddfVOrx-ljkA4BVmjtU" alt="SoFloPy Logo" class="me-2" style="width: 40px; height: 40px;">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#orgOneContent" aria-expanded="true" aria-controls="orgOneContent">
-              South Florida Python Users Group (SoFloPy)
-            </button>
-          </h5>
-        </div>
-        <div id="orgOneContent" class="collapse show" aria-labelledby="orgOne" data-parent="#organizationsAccordion">
-          <div class="card-body">
-            <p><strong>Member</strong> · Jan 2020 - Present</p>
-            <p>The South Florida Python Users Group (SoFloPy) exists to unite and grow the Python (programming language) community of South Florida. With events in the Palm Beach, Boca Raton, Ft. Lauderdale, and Miami areas.</p>
-            <p>The group is a branch of SoFloPHP. For more information about PHP, please see <a href="http://soflophp.org" target="_blank">soflophp.org</a>.</p>
-          </div>
-        </div>
-      </div>
-      <!-- OFFICIAL LFC SUPPORTERS CLUBS -->
-      <div class="card">
-        <div class="card-header" id="orgTwo">
-          <h5 class="mb-0 d-flex align-items-center">
-            <img src="https://pbs.twimg.com/profile_images/1131743094494367744/6Q7qJolh_400x400.png" alt="LFC Logo" class="me-2" style="width: 40px; height: 40px;">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#orgTwoContent" aria-expanded="false" aria-controls="orgTwoContent">
-              OFFICIAL LFC SUPPORTERS CLUBS
-            </button>
-          </h5>
-        </div>
-        <div id="orgTwoContent" class="collapse" aria-labelledby="orgTwo" data-parent="#organizationsAccordion">
-          <div class="card-body">
-            <p><strong>Member</strong> · Jan 2018 - Present</p>
-            <p>Liverpool Football Club has over 300 Official LFC Supporters Clubs (OLSCs) in 100 countries worldwide. Our OLSCs provide a valuable service to loyal LFC fans living in the local area.</p>
-            <p>For more information, visit <a href="https://www.liverpoolfc.com/fans/official-lfc-supporters-clubs" target="_blank">liverpoolfc.com</a>.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Bianconeri - Juventus Fans -->
-      <div class="card">
-        <div class="card-header" id="orgThree">
-          <h5 class="mb-0 d-flex align-items-center">
-            <img src="https://logos-world.net/wp-content/uploads/2020/06/Juventus-FC-Logo-2017-present.jpg" alt="Juventus Logo" class="me-2" style="width: 40px; height: 40px;">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#orgThreeContent" aria-expanded="false" aria-controls="orgThreeContent">
-              Bianconeri - Juventus Fans
-            </button>
-          </h5>
-        </div>
-        <div id="orgThreeContent" class="collapse" aria-labelledby="orgThree" data-parent="#organizationsAccordion">
-          <div class="card-body">
-            <p><strong>Member</strong> · Jan 2014 - Present</p>
-            <p>Official Fan Clubs, Fan Experience, and other services reserved for Bianconeri, the black-and-white fans of Juventus Club.</p>
-            <p>For more information, visit <a href="https://www.juventus.com/en/bianconeri/" target="_blank">juventus.com</a>.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- Resume Section -->
-  <section id="resume" class="section">
+  <!-- Organizations Section -->
+  <section id="organizations" class="section">
     <div class="container">
-      <h2>Resume</h2>
-      <p>Download my resume <a href="#">here</a>.</p>
+      <h2>Organizations</h2>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5>🐍 SoFloPy</h5>
+              <p>South Florida Python Users Group (2020-Present)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5>🔴 LFC Supporters</h5>
+              <p>Official Liverpool FC Supporters Club (2018-Present)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5>⚪ Juventus Fans</h5>
+              <p>Bianconeri - Juventus Fans Club (2014-Present)</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-<section id="contact" class="section bg-light">
-  <div class="container">
-    <h2>Contact</h2>
-    <p>Feel free to get in touch with me via email at <a href="mailto:elzoukigroup2018@gmail.com"><i class="fas fa-envelope"></i> elzoukigroup2018@gmail.com</a>, follow me on <a href="https://www.linkedin.com/in/nadir-elzouki-40679a1a9/?profileId=ACoAADC0QsYBFUKy48Zd-9qCBPFJWsDyxOha1yo"><i class="fab fa-linkedin"></i> LinkedIn</a>, and follow me on <a href="https://github.com/Nelzouki22"><i class="fab fa-github"></i> GitHub</a>.</p>
-  </div>
-</section>
-
-
-  <!-- Blog Section -->
-  <section id="blog" class="section">
+  <section id="contact" class="section">
     <div class="container">
-      <h2>Blog</h2>
-      <p>Check out my latest blog posts <a href="https://nadiraelzouki.blogspot.com">here</a>.</p>
+      <h2>Contact</h2>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <i class="fas fa-envelope fa-2x" style="color:#6c5ce7;"></i>
+              <h5 class="mt-2">Email</h5>
+              <a href="mailto:elzoukigroup2018@gmail.com">elzoukigroup2018@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <i class="fab fa-linkedin fa-2x" style="color:#6c5ce7;"></i>
+              <h5 class="mt-2">LinkedIn</h5>
+              <a href="https://www.linkedin.com/in/nadir-elzouki-40679a1a9/">Nadir Elzouki</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <i class="fab fa-github fa-2x" style="color:#6c5ce7;"></i>
+              <h5 class="mt-2">GitHub</h5>
+              <a href="https://github.com/Nelzouki22">Nelzouki22</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-light text-center py-4">
-    <p>&copy; 2024 Nadir A. Elzouki. All rights reserved.</p>
+  <footer>
+    <p>&copy; 2025 Nadir A. Elzouki. All rights reserved. | Full Stack Developer & Cybersecurity Specialist</p>
   </footer>
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Function to toggle project description
+    function toggleDescription(descId, button) {
+      var desc = document.getElementById(descId);
+      if (desc.classList.contains('show')) {
+        desc.classList.remove('show');
+        button.innerHTML = 'Show More <i class="fas fa-chevron-down"></i>';
+        button.classList.remove('active');
+      } else {
+        desc.classList.add('show');
+        button.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+        button.classList.add('active');
+      }
+    }
+    
+    // Smooth scrolling for anchor links
+    $('a[href*="#"]').on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({
+        scrollTop: $($(this).attr('href')).offset().top - 70
+      }, 500);
+    });
+  </script>
 </body>
 </html>
