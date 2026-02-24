@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <!-- هذا السطر مهم جداً لـ GitHub Pages -->
+  <base href="/">
   
-  <!-- SEO Meta Tags -->
+  <!-- تحسينات SEO -->
   <title>Nadir A. Elzouki | Full Stack Developer & Cybersecurity Specialist</title>
   <meta name="description" content="Full Stack Developer متخصص في Web 3.0, الذكاء الاصطناعي, وأمن المعلومات. خبرة في Python, JavaScript, Swift, Cybersecurity مع أكثر من 30 مشروع">
   <meta name="keywords" content="مطور ويب, Full Stack, Web 3.0, Python, JavaScript, Cybersecurity, AI, Machine Learning, Flask, Django, Swift, iOS, Android">
@@ -13,6 +15,7 @@
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nelzouki22.github.io">
   <meta property="og:title" content="Nadir A. Elzouki | Full Stack Developer">
   <meta property="og:description" content="مطور Full Stack متخصص في Web 3.0, الذكاء الاصطناعي وأمن المعلومات">
   <meta property="og:image" content="https://via.placeholder.com/1200x630/1a1a2e/6c5ce7?text=Nadir+Elzouki">
@@ -38,6 +41,7 @@
       color: #e0e0e0;
       line-height: 1.6;
       overflow-x: hidden;
+      padding-top: 70px; /* تعويض مسافة الـ navbar الثابت */
     }
 
     /* ========== CUSTOM SCROLLBAR ========== */
@@ -68,6 +72,9 @@
       h2 {
         font-size: 2rem;
       }
+      body {
+        padding-top: 60px;
+      }
     }
 
     h2::after {
@@ -83,11 +90,13 @@
 
     .section {
       padding: 80px 0;
+      scroll-margin-top: 70px; /* مهم جداً للتمرير مع الـ navbar الثابت */
     }
 
     @media (max-width: 768px) {
       .section {
         padding: 50px 0;
+        scroll-margin-top: 60px;
       }
     }
 
@@ -151,6 +160,7 @@
       transition: all 0.3s;
       border-radius: 30px;
       padding: 8px 16px !important;
+      cursor: pointer;
     }
 
     .navbar-nav .nav-link:hover {
@@ -161,13 +171,13 @@
 
     /* ========== HERO SECTION ========== */
     .hero {
-      padding: 120px 0 80px;
+      padding: 40px 0 60px;
       text-align: center;
     }
 
     @media (max-width: 768px) {
       .hero {
-        padding: 100px 0 60px;
+        padding: 30px 0 50px;
       }
     }
 
@@ -386,13 +396,29 @@
       padding: 20px !important;
       text-align: center;
     }
+
+    /* تحسين ظهور القائمة على الجوال */
+    .navbar-collapse {
+      background: rgba(10, 10, 20, 0.95);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 992px) {
+      .navbar-collapse {
+        background: transparent;
+        padding: 0;
+        margin-top: 0;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">Nadir A. Elzouki</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <a class="navbar-brand" href="/">Nadir A. Elzouki</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -593,12 +619,12 @@
         <div class="card">
           <div class="card-header" id="exp1">
             <h5 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#exp1Collapse">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#exp1Collapse" aria-expanded="true" aria-controls="exp1Collapse">
                 Apple - Technical Specialist (Jun 2022 - Present)
               </button>
             </h5>
           </div>
-          <div id="exp1Collapse" class="collapse show" data-parent="#experienceAccordion">
+          <div id="exp1Collapse" class="collapse show" aria-labelledby="exp1" data-parent="#experienceAccordion">
             <div class="card-body">
               <p>Technical support and troubleshooting for Apple products. Skilled multi-tasker with expertise in customer service and technical solutions.</p>
             </div>
@@ -607,12 +633,12 @@
         <div class="card">
           <div class="card-header" id="exp2">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#exp2Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#exp2Collapse" aria-expanded="false" aria-controls="exp2Collapse">
                 Freelancer.com - Freelance Web Developer (2015 - Present)
               </button>
             </h5>
           </div>
-          <div id="exp2Collapse" class="collapse" data-parent="#experienceAccordion">
+          <div id="exp2Collapse" class="collapse" aria-labelledby="exp2" data-parent="#experienceAccordion">
             <div class="card-body">
               <p>Full-stack development for international clients. Built 30+ projects including AI chatbots, cybersecurity tools, and web applications.</p>
             </div>
@@ -621,12 +647,12 @@
         <div class="card">
           <div class="card-header" id="exp3">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#exp3Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#exp3Collapse" aria-expanded="false" aria-controls="exp3Collapse">
                 Geek Squad - Consultation Agent (Oct 2017 - May 2022)
               </button>
             </h5>
           </div>
-          <div id="exp3Collapse" class="collapse" data-parent="#experienceAccordion">
+          <div id="exp3Collapse" class="collapse" aria-labelledby="exp3" data-parent="#experienceAccordion">
             <div class="card-body">
               <p>Technical consultations, increased membership sales by 20%, reduced complaints by 10%. Employee of the Year 2019.</p>
             </div>
@@ -1513,12 +1539,12 @@
         <div class="card">
           <div class="card-header" id="cert1">
             <h5 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#cert1Collapse">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#cert1Collapse" aria-expanded="true" aria-controls="cert1Collapse">
                 Microsoft Cloud Support Associate (Oct 2025)
               </button>
             </h5>
           </div>
-          <div id="cert1Collapse" class="collapse show" data-parent="#licensesAccordion">
+          <div id="cert1Collapse" class="collapse show" aria-labelledby="cert1" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Microsoft (Coursera) | ID: CV0V7V9YBOKB</div>
           </div>
         </div>
@@ -1527,12 +1553,12 @@
         <div class="card">
           <div class="card-header" id="cert2">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert2Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert2Collapse" aria-expanded="false" aria-controls="cert2Collapse">
                 Microsoft IT Support (Oct 2025)
               </button>
             </h5>
           </div>
-          <div id="cert2Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert2Collapse" class="collapse" aria-labelledby="cert2" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Microsoft (Coursera) | ID: VTQ2D8RKD1WI</div>
           </div>
         </div>
@@ -1541,12 +1567,12 @@
         <div class="card">
           <div class="card-header" id="cert3">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert3Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert3Collapse" aria-expanded="false" aria-controls="cert3Collapse">
                 Microsoft Python Development (Feb 2025)
               </button>
             </h5>
           </div>
-          <div id="cert3Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert3Collapse" class="collapse" aria-labelledby="cert3" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Microsoft (Coursera) | ID: MU69FHVRYEUJ</div>
           </div>
         </div>
@@ -1555,12 +1581,12 @@
         <div class="card">
           <div class="card-header" id="cert4">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert4Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert4Collapse" aria-expanded="false" aria-controls="cert4Collapse">
                 IBM and ISC2 Cybersecurity Specialist (Apr 2025)
               </button>
             </h5>
           </div>
-          <div id="cert4Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert4Collapse" class="collapse" aria-labelledby="cert4" data-parent="#licensesAccordion">
             <div class="card-body">Issued by IBM & ISC2 | ID: TL3C27SBT3DW</div>
           </div>
         </div>
@@ -1569,12 +1595,12 @@
         <div class="card">
           <div class="card-header" id="cert5">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert5Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert5Collapse" aria-expanded="false" aria-controls="cert5Collapse">
                 Meta Back-End Developer (Jan 2023)
               </button>
             </h5>
           </div>
-          <div id="cert5Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert5Collapse" class="collapse" aria-labelledby="cert5" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Meta (Coursera) | ID: XUAYZDGZ3YYF</div>
           </div>
         </div>
@@ -1583,12 +1609,12 @@
         <div class="card">
           <div class="card-header" id="cert6">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert6Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert6Collapse" aria-expanded="false" aria-controls="cert6Collapse">
                 Microsoft Front-End Developer (Nov 2024)
               </button>
             </h5>
           </div>
-          <div id="cert6Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert6Collapse" class="collapse" aria-labelledby="cert6" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Microsoft (Coursera) | ID: D6UEKFSSARZK</div>
           </div>
         </div>
@@ -1597,12 +1623,12 @@
         <div class="card">
           <div class="card-header" id="cert7">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert7Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert7Collapse" aria-expanded="false" aria-controls="cert7Collapse">
                 IBM IT Support Professional (Aug 2024)
               </button>
             </h5>
           </div>
-          <div id="cert7Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert7Collapse" class="collapse" aria-labelledby="cert7" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Coursera | ID: Q04D7GL1NLCM</div>
           </div>
         </div>
@@ -1611,12 +1637,12 @@
         <div class="card">
           <div class="card-header" id="cert8">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert8Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert8Collapse" aria-expanded="false" aria-controls="cert8Collapse">
                 Meta Front-End Developer (Nov 2023)
               </button>
             </h5>
           </div>
-          <div id="cert8Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert8Collapse" class="collapse" aria-labelledby="cert8" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Coursera | ID: DJA775B5XV6P</div>
           </div>
         </div>
@@ -1625,12 +1651,12 @@
         <div class="card">
           <div class="card-header" id="cert9">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert9Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert9Collapse" aria-expanded="false" aria-controls="cert9Collapse">
                 SAP Technology Consultant (Nov 2023)
               </button>
             </h5>
           </div>
-          <div id="cert9Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert9Collapse" class="collapse" aria-labelledby="cert9" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Coursera | ID: 2H3MXNYARXRC</div>
           </div>
         </div>
@@ -1639,12 +1665,12 @@
         <div class="card">
           <div class="card-header" id="cert10">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert10Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert10Collapse" aria-expanded="false" aria-controls="cert10Collapse">
                 Google Cybersecurity (May 2023)
               </button>
             </h5>
           </div>
-          <div id="cert10Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert10Collapse" class="collapse" aria-labelledby="cert10" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Coursera | ID: BPYF9Y3S6R9B</div>
           </div>
         </div>
@@ -1653,12 +1679,12 @@
         <div class="card">
           <div class="card-header" id="cert11">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert11Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert11Collapse" aria-expanded="false" aria-controls="cert11Collapse">
                 Meta iOS Developer (May 2023)
               </button>
             </h5>
           </div>
-          <div id="cert11Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert11Collapse" class="collapse" aria-labelledby="cert11" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Coursera | ID: TV4PMHGW7G2Y</div>
           </div>
         </div>
@@ -1667,12 +1693,12 @@
         <div class="card">
           <div class="card-header" id="cert12">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert12Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert12Collapse" aria-expanded="false" aria-controls="cert12Collapse">
                 Palo Alto Networks Cybersecurity (Apr 2023)
               </button>
             </h5>
           </div>
-          <div id="cert12Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert12Collapse" class="collapse" aria-labelledby="cert12" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Palo Alto Networks | ID: 7F53MRCFR4ZJ</div>
           </div>
         </div>
@@ -1681,12 +1707,12 @@
         <div class="card">
           <div class="card-header" id="cert13">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert13Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert13Collapse" aria-expanded="false" aria-controls="cert13Collapse">
                 IBM Cybersecurity Analyst (Mar 2023)
               </button>
             </h5>
           </div>
-          <div id="cert13Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert13Collapse" class="collapse" aria-labelledby="cert13" data-parent="#licensesAccordion">
             <div class="card-body">Issued by IBM | ID: XTY8VHFWX8VY</div>
           </div>
         </div>
@@ -1695,12 +1721,12 @@
         <div class="card">
           <div class="card-header" id="cert14">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert14Collapse">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cert14Collapse" aria-expanded="false" aria-controls="cert14Collapse">
                 Apple Certified iOS Technician (ACiT)
               </button>
             </h5>
           </div>
-          <div id="cert14Collapse" class="collapse" data-parent="#licensesAccordion">
+          <div id="cert14Collapse" class="collapse" aria-labelledby="cert14" data-parent="#licensesAccordion">
             <div class="card-body">Issued by Apple | ID: 372220992</div>
           </div>
         </div>
@@ -1844,7 +1870,7 @@
     <p>&copy; 2025 Nadir A. Elzouki. All rights reserved. | Full Stack Developer & Cybersecurity Specialist</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts - الترتيب مهم جداً -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -1864,12 +1890,58 @@
       }
     }
     
-    // Smooth scrolling for anchor links
-    $('a[href*="#"]').on('click', function(e) {
-      e.preventDefault();
-      $('html, body').animate({
-        scrollTop: $($(this).attr('href')).offset().top - 70
-      }, 500);
+    // Smooth scrolling for anchor links - الحل النهائي
+    document.addEventListener('DOMContentLoaded', function() {
+      // اختيار جميع روابط الـ navbar
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href'); // مثلاً #about
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            // حساب المسافة مع مراعاة ارتفاع الـ navbar
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetElement.offsetTop - navbarHeight;
+            
+            // التمرير السلس
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            // تحديث الـ URL (اختياري)
+            history.pushState(null, null, targetId);
+            
+            // إغلاق القائمة على الجوال بعد النقر
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+              navbarCollapse.classList.remove('show');
+            }
+          }
+        });
+      });
+      
+      // التحقق من وجود hash في URL عند تحميل الصفحة
+      if (window.location.hash) {
+        const targetId = window.location.hash;
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          setTimeout(() => {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetElement.offsetTop - navbarHeight;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }, 100); // تأخير بسيط للتأكد من تحميل الصفحة بالكامل
+        }
+      }
     });
   </script>
 </body>
